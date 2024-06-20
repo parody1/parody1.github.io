@@ -1,0 +1,17 @@
+[build]
+  publish = "public" # Ensure this matches the directory where your site files are located
+  command = "npm run build" # If you have a build command, otherwise remove this line
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "ALLOW-FROM https://www.canva.com"
+    Content-Security-Policy = "frame-ancestors 'self' https://www.canva.com"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer-when-downgrade"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

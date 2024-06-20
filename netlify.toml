@@ -1,8 +1,11 @@
+[build]
+  publish = "." 
+
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOWALL" # Allow embedding from any site
-    Content-Security-Policy = "frame-ancestors *" # Allow embedding from any site
+    X-Frame-Options = "ALLOWALL" 
+    Content-Security-Policy = "frame-ancestors *" 
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"

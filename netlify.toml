@@ -1,14 +1,14 @@
 [build]
-  publish = "."
+  publish = "." 
 
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "ALLOWALL"
-    Content-Security-Policy = "frame-ancestors 'self' *"
+    Content-Security-Policy = "frame-ancestors *"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
-    Content-Encoding = "gzip"
+    Referrer-Policy = "no-referrer-when-downgrade"
 
 [[redirects]]
   from = "/*"

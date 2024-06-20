@@ -1,8 +1,8 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    X-Frame-Options = "ALLOW-FROM https://www.canva.com"
-    Content-Security-Policy = "frame-ancestors 'self' https://www.canva.com"
+    X-Frame-Options = "ALLOWALL" # Allow embedding from any site
+    Content-Security-Policy = "frame-ancestors *" # Allow embedding from any site
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"

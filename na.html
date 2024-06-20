@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta property="twitter:creator" content="@codesandbox">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Source Code Pro:500" rel="stylesheet">
+        <link crossorigin="anonymous" rel="preload" href="/static/fonts/inter/Inter-Regular.woff2" as="font">
+        <link crossorigin="anonymous" rel="preload" href="/static/fonts/inter/Inter-Medium.woff2" as="font">
+        <link crossorigin="anonymous" rel="preload" href="/static/fonts/inter/Inter-Bold.woff2" as="font">
+        <link href="/static/fonts/inter/inter.css" rel="stylesheet">
+        <link href="/static/fonts/monolisa.css" rel="stylesheet">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/csb-ios.svg" color="#fff">
+        <link href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+<style>
+svg {
+background: transparent;
+}
+path {
+fill: black;
+}
+@media (prefers-color-scheme: dark)  {
+path {
+  fill: white;
+}
+}
+</style>
+<path fill-rule='evenodd' clip-rule='evenodd' d='M81.8182 18.1818V81.8182H18.1818V18.1818H81.8182ZM10 90V10H90V90H10Z'/>
+</svg>" rel="icon"/>
+        <title>weathered-butterfly-2fxt7x - CodeSandbox</title>
+        <script src="/static/js/env-config.js"></script>
+        <script src="https://codesandbox.io/static/browserfs12/browserfs.min.js" type="text/javascript"></script>
+        <script>
+            BrowserFS && (window.process = {
+                env: {
+                    VSCODE_DEV: !1
+                },
+                nextTick: function(e) {
+                    return requestAnimationFrame(e)
+                },
+                once: BrowserFS.BFSRequire("process").once,
+                removeListener: function() {}
+            },
+            window.Buffer = BrowserFS.BFSRequire("buffer").Buffer)
+        </script>
+        <!-- AMD Loader for Monaco -->
+        <script src="/public/14/vs/loader.js"></script>
+        <script>
+            window.require.config({
+                url: "/public/14/vs/loader.js",
+                paths: {
+                    vs: "/public/14/vs"
+                }
+            })
+        </script>
+        <script>
+            window.__SANDBOX_DATA__ = {
+                "ai_consent": false,
+                "screenshot_url": "https:\u002F\u002Fscreenshots.codesandbox.io\u002F2fxt7x\u002F1.png",
+                "id": "2fxt7x",
+                "alias": "weathered-butterfly-2fxt7x",
+                "base_git": null,
+                "description": null,
+                "directories": [{
+                    "id": "f7785686-f5a7-4f3e-a600-0b5f2db609a3",
+                    "title": ".codesandbox",
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "shortid": "fifFH6CoD_9",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": null
+                }],
+                "v2": false,
+                "updated_at": "2024-06-20T13:13:39",
+                "view_count": 108,
+                "collection": false,
+                "author": {
+                    "id": "37f4472a-feb3-409a-bfb4-ef11bcf2de6a",
+                    "name": "parody",
+                    "username": "parody1",
+                    "avatar_url": "https:\u002F\u002Favatars.githubusercontent.com\u002Fu\u002F5676533?v=4",
+                    "personal_workspace_id": "83a5609f-81d6-40f7-b727-d72e042ab146",
+                    "subscription_plan": null,
+                    "subscription_since": null
+                },
+                "team": {
+                    "id": "83a5609f-81d6-40f7-b727-d72e042ab146",
+                    "name": "parody1",
+                    "settings": {
+                        "ai_consent": {
+                            "public_sandboxes": false,
+                            "private_sandboxes": false
+                        }
+                    },
+                    "subscription_type": null,
+                    "avatar_url": "https:\u002F\u002Favatars.githubusercontent.com\u002Fu\u002F5676533?v=4"
+                },
+                "feature_flags": {
+                    "comments": false,
+                    "container_lsp": false
+                },
+                "entry": "index.html",
+                "version": 1,
+                "privacy": 0,
+                "is_sse": false,
+                "pr_number": null,
+                "preview_secret": null,
+                "git": null,
+                "inserted_at": "2024-06-20T13:13:39",
+                "template": "static",
+                "forked_template": {
+                    "id": "2bbad915-3fc4-46f9-b850-c1f0a7717903",
+                    "title": "HTML + CSS",
+                    "v2": false,
+                    "color": "#3AA855",
+                    "url": null,
+                    "published": false,
+                    "icon_url": "github",
+                    "official": false
+                },
+                "settings": {
+                    "ai_consent": null
+                },
+                "npm_dependencies": {},
+                "is_frozen": false,
+                "free_plan_editing_restricted": false,
+                "always_on": false,
+                "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                "custom_template": null,
+                "restrictions": {
+                    "free_plan_editing_restricted": false,
+                    "live_sessions_restricted": true
+                },
+                "original_git_commit_sha": "1d81ddb8e9033a7e70fcad13cfd721e43b86d6a3",
+                "fork_count": 0,
+                "user_liked": false,
+                "draft": false,
+                "tags": [],
+                "original_git": null,
+                "external_resources": [],
+                "npm_registries": [],
+                "modules": [{
+                    "code": "{\n  \"setupTasks\": [{ \"name\": \"Install Dependencies\", \"command\": \"yarn install\" }],\n  \"tasks\": {\n    \"start\": {\n      \"name\": \"start\",\n      \"command\": \"yarn start\",\n      \"runAtStart\": true,\n      \"preview\": { \"port\": 5000 }\n    }\n  }\n}\n",
+                    "id": "cf472b9b-6853-49f5-9748-404006edcfe1",
+                    "is_binary": false,
+                    "title": "tasks.json",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "upload_id": null,
+                    "shortid": "3tiHbnqUP6z",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": "fifFH6CoD_9"
+                }, {
+                    "code": "{\n  \"title\": \"HTML + CSS\",\n  \"description\": \"A template for HTML and CSS\",\n  \"tags\": [\"html\", \"css\"],\n  \"published\": true,\n  \"runtime\": \"static\"\n}\n",
+                    "id": "52dd9bda-0e49-4c06-961a-2656582e334b",
+                    "is_binary": false,
+                    "title": "template.json",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "upload_id": null,
+                    "shortid": "NPgvxjQyeqc",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": "fifFH6CoD_9"
+                }, {
+                    "code": "{\n  \"env\": {\n    \"browser\": true,\n    \"es2021\": true\n  },\n  \"extends\": [\"eslint:recommended\"],\n  \"parser\": \"babel-eslint\",\n  \"parserOptions\": {\n    \"ecmaVersion\": 6,\n    \"sourceType\": \"module\"\n  }\n}\n",
+                    "id": "7be8759b-3d60-4afd-bbfa-57df812ffe1d",
+                    "is_binary": false,
+                    "title": ".eslintrc.json",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "upload_id": null,
+                    "shortid": "Qc5xZtLUBBx",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": null
+                }, {
+                    "code": "\u003C!DOCTYPE html\u003E\n\u003Chtml lang=\"en\"\u003E\n  \u003Chead\u003E\n    \u003Cmeta charset=\"UTF-8\" \u002F\u003E\n    \u003Cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" \u002F\u003E\n    \u003Ctitle\u003EDynamic Table with Filters\u003C\u002Ftitle\u003E\n    \u003Cstyle\u003E\n      @font-face {\n        font-family: \"Avenir Next W04 Demi\";\n        src: url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.eot\");\n        src: url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.eot?#iefix\")\n            format(\"embedded-opentype\"),\n          url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.woff2\")\n            format(\"woff2\"),\n          url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.woff\")\n            format(\"woff\"),\n          url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.ttf\")\n            format(\"truetype\"),\n          url(\"https:\u002F\u002Fdb.onlinewebfonts.com\u002Ft\u002F0389bdf50d5b601e5ab18443145f4e6d.svg#Avenir Next W04 Demi\")\n            format(\"svg\");\n      }\n      body {\n        background-color: black;\n        color: white;\n        font-family: \"Avenir Next LT Pro Demi\", Arial, sans-serif;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n      }\n      .header-image {\n        margin: 20px 0;\n        display: block;\n      }\n      table {\n        width: 100%;\n        max-width: 100%;\n        table-layout: fixed;\n        border-collapse: separate; \u002F* Use separate borders for rounded corners *\u002F\n        border-spacing: 0; \u002F* Remove spacing between cells *\u002F\n        border-radius: 10px; \u002F* Add border radius for rounded corners *\u002F\n        overflow: hidden; \u002F* Ensure content fits within the rounded corners *\u002F\n        border: 1px solid #ddd; \u002F* Optional: Add border to visualize rounded corners *\u002F\n      }\n      th,\n      td {\n        border: 1px solid #ddd;\n        padding: 8px;\n        text-align: center;\n        word-wrap: break-word;\n        background-clip: padding-box; \u002F* Ensures background respects border radius *\u002F\n      }\n      th {\n        background-color: black;\n      }\n      th img {\n        max-width: 100px; \u002F* Set the desired maximum width *\u002F\n        height: auto; \u002F* Maintain aspect ratio *\u002F\n      }\n      .filters {\n        display: flex;\n        flex-direction: row; \u002F* Change to row to place filters on the same line *\u002F\n        align-items: center;\n        justify-content: center; \u002F* Center the filters horizontally *\u002F\n        margin-bottom: 20px;\n        flex-wrap: wrap; \u002F* Allow wrapping if the filters do not fit in one line *\u002F\n      }\n      .filters button {\n        margin: 5px;\n        padding: 10px;\n        background-color: #555;\n        color: white;\n        border: none;\n        cursor: pointer;\n        border-radius: 5px;\n      }\n      .filters button.selected {\n        background-color: #007bff;\n      }\n      .dropdown {\n        position: relative;\n        display: inline-block;\n        margin: 10px;\n      }\n\n      .dropbtn {\n        background-color: #555;\n        color: white;\n        padding: 10px;\n        font-size: 14px;\n        border: none;\n        cursor: pointer;\n        border-radius: 5px;\n      }\n\n      .dropdown-content {\n        display: none;\n        position: absolute;\n        background-color: black;\n        min-width: 160px;\n        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);\n        z-index: 1;\n        border-radius: 5px;\n        overflow: hidden;\n      }\n\n      .dropdown-content label {\n        color: white;\n        padding: 10px;\n        text-decoration: none;\n        display: block;\n      }\n\n      .dropdown-content label:hover {\n        background-color: blue;\n      }\n\n      .dropdown:hover .dropdown-content,\n      .dropdown-content:hover {\n        display: block;\n      }\n\n      .hidden {\n        display: none;\n      }\n\n      .message {\n        text-align: center;\n        margin: 20px 0;\n        font-size: 1.5em;\n      }\n    \u003C\u002Fstyle\u003E\n  \u003C\u002Fhead\u003E\n  \u003Cbody\u003E\n    \u003Cimg\n      src=\"https:\u002F\u002Fwww.ledimesh.com\u002F-_-\u002Fres\u002F427c60b4-1b47-485d-bc6f-af01dc7e5c1b\u002Fimages\u002Ffiles\u002F427c60b4-1b47-485d-bc6f-af01dc7e5c1b\u002F99457a21-e090-42b7-8836-016d61a412ed\u002F320-237\u002Fb54f56f063725b3f03614188c9dd7ea7f6091da1\"\n      alt=\"Header Image\"\n      class=\"header-image\"\n    \u002F\u003E\n\n    \u003Cdiv class=\"filters\"\u003E\n      \u003Cdiv class=\"dropdown\"\u003E\n        \u003Cbutton class=\"dropbtn\"\u003EFilter 1\u003C\u002Fbutton\u003E\n        \u003Cdiv class=\"dropdown-content\"\u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria1\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 1\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria2\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 2\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria3\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 3\u003C\u002Flabel\n          \u003E\n        \u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cdiv class=\"dropdown\"\u003E\n        \u003Cbutton class=\"dropbtn\"\u003EFilter 2\u003C\u002Fbutton\u003E\n        \u003Cdiv class=\"dropdown-content\"\u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria1\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 1\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria2\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 2\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria3\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 3\u003C\u002Flabel\n          \u003E\n        \u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n      \u003Cdiv class=\"dropdown\"\u003E\n        \u003Cbutton class=\"dropbtn\"\u003EFilter 3\u003C\u002Fbutton\u003E\n        \u003Cdiv class=\"dropdown-content\"\u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria1\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 1\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria2\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 2\u003C\u002Flabel\n          \u003E\n          \u003Clabel\n            \u003E\u003Cinput\n              type=\"checkbox\"\n              value=\"Criteria3\"\n              onchange=\"applyFilters()\"\n            \u002F\u003E\n            Criteria 3\u003C\u002Flabel\n          \u003E\n        \u003C\u002Fdiv\u003E\n      \u003C\u002Fdiv\u003E\n    \u003C\u002Fdiv\u003E\n\n    \u003Cdiv id=\"message\" class=\"message\"\u003EChoose your criteria\u003C\u002Fdiv\u003E\n\n    \u003Ctable id=\"dynamicTable\"\u003E\n      \u003Cthead\u003E\n        \u003Ctr\u003E\n          \u003Cth class=\"col1\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Flumoscontrols.com\u002Findex_files\u002Fmenu-logo.svg\"\n              alt=\"Image 1\"\n            \u002F\u003E\u003Cbr \u002F\u003ELumos Controls\n          \u003C\u002Fth\u003E\n          \u003Cth class=\"col2\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Fcosmicnode.com\u002Fwp-content\u002Fuploads\u002F2022\u002F04\u002Fcn-logo.svg\"\n              alt=\"Image 2\"\n            \u002F\u003E\u003Cbr \u002F\u003ECosmicnode\n          \u003C\u002Fth\u003E\n          \u003Cth class=\"col3\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Fingy.nl\u002Fwp-content\u002Fuploads\u002F2018\u002F11\u002FINGY.png\"\n              alt=\"Image 3\"\n            \u002F\u003E\u003Cbr \u002F\u003EIngy\n          \u003C\u002Fth\u003E\n          \u003Cth class=\"col4\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Fwww.one-lux.com\u002Fwp-content\u002Fthemes\u002Fone-lux\u002Flibrary\u002Fimages\u002Flogo.png\"\n              alt=\"Image 4\"\n            \u002F\u003E\u003Cbr \u002F\u003EOne Lux\n          \u003C\u002Fth\u003E\n          \u003Cth class=\"col5\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Fwww.systeqltd.co.uk\u002Fweb\u002Fimage\u002F2088-d8f11cfc\u002FH2A_2.svg\"\n              alt=\"Image 5\"\n            \u002F\u003E\u003Cbr \u002F\u003ESysteq\n          \u003C\u002Fth\u003E\n          \u003Cth class=\"col6\"\u003E\n            \u003Cimg\n              src=\"https:\u002F\u002Fupload.wikimedia.org\u002Fwikipedia\u002Fcommons\u002Fthumb\u002F8\u002F88\u002FSILVAIR_logotype.png\u002F120px-SILVAIR_logotype.png\"\n              alt=\"Silvair\"\n            \u002F\u003E\u003Cbr \u002F\u003ETitle 6\n          \u003C\u002Fth\u003E\n        \u003C\u002Ftr\u003E\n      \u003C\u002Fthead\u003E\n      \u003Ctbody\u003E\n        \u003Ctr\n          data-filter1=\"Criteria1\"\n          data-filter2=\"Criteria1\"\n          data-filter3=\"Criteria1\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 1, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 1, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 1, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 1, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 1, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 1, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003Ctr\n          data-filter1=\"Criteria2\"\n          data-filter2=\"Criteria2\"\n          data-filter3=\"Criteria2\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 2, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 2, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 2, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 2, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 2, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 2, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003Ctr\n          data-filter1=\"Criteria3\"\n          data-filter2=\"Criteria3\"\n          data-filter3=\"Criteria3\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 3, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 3, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 3, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 3, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 3, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 3, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003C!-- Repeat similar rows for a total of 18 rows, each assigned to one of the categories --\u003E\n        \u003C!-- Example for more rows --\u003E\n        \u003Ctr\n          data-filter1=\"Criteria1\"\n          data-filter2=\"Criteria2\"\n          data-filter3=\"Criteria3\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 4, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 4, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 4, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 4, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 4, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 4, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003Ctr\n          data-filter1=\"Criteria2\"\n          data-filter2=\"Criteria3\"\n          data-filter3=\"Criteria1\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 5, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 5, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 5, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 5, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 5, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 5, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003Ctr\n          data-filter1=\"Criteria3\"\n          data-filter2=\"Criteria1\"\n          data-filter3=\"Criteria2\"\n        \u003E\n          \u003Ctd class=\"col1\"\u003ERow 6, Col 1\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col2\"\u003ERow 6, Col 2\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col3\"\u003ERow 6, Col 3\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col4\"\u003ERow 6, Col 4\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col5\"\u003ERow 6, Col 5\u003C\u002Ftd\u003E\n          \u003Ctd class=\"col6\"\u003ERow 6, Col 6\u003C\u002Ftd\u003E\n        \u003C\u002Ftr\u003E\n        \u003C!-- Add more rows as needed --\u003E\n      \u003C\u002Ftbody\u003E\n    \u003C\u002Ftable\u003E\n\n    \u003Cscript\u003E\n      const selectedFilters = {\n        filter1: new Set(),\n        filter2: new Set(),\n        filter3: new Set()\n      };\n\n      function applyFilters() {\n        const rows = document.querySelectorAll(\"#dynamicTable tbody tr\");\n        let anyVisible = false;\n\n        const selectedfilter1 = Array.from(\n          document.querySelectorAll(\n            '.dropdown-content input[type=\"checkbox\"]:checked'\n          )\n        )\n          .filter(\n            (checkbox) =\u003E\n              checkbox\n                .closest(\".dropdown\")\n                .querySelector(\".dropbtn\")\n                .textContent.trim() === \"Filter 1\"\n          )\n          .map((checkbox) =\u003E checkbox.value);\n\n        const selectedfilter2 = Array.from(\n          document.querySelectorAll(\n            '.dropdown-content input[type=\"checkbox\"]:checked'\n          )\n        )\n          .filter(\n            (checkbox) =\u003E\n              checkbox\n                .closest(\".dropdown\")\n                .querySelector(\".dropbtn\")\n                .textContent.trim() === \"Filter 2\"\n          )\n          .map((checkbox) =\u003E checkbox.value);\n\n        const selectedfilter3 = Array.from(\n          document.querySelectorAll(\n            '.dropdown-content input[type=\"checkbox\"]:checked'\n          )\n        )\n          .filter(\n            (checkbox) =\u003E\n              checkbox\n                .closest(\".dropdown\")\n                .querySelector(\".dropbtn\")\n                .textContent.trim() === \"Filter 3\"\n          )\n          .map((checkbox) =\u003E checkbox.value);\n\n        rows.forEach((row) =\u003E {\n          const filter1Match =\n            selectedfilter1.length === 0 ||\n            selectedfilter1.includes(row.dataset.filter1);\n          const filter2Match =\n            selectedfilter2.length === 0 ||\n            selectedfilter2.includes(row.dataset.filter2);\n          const filter3Match =\n            selectedfilter3.length === 0 ||\n            selectedfilter3.includes(row.dataset.filter3);\n\n          const visible = filter1Match && filter2Match && filter3Match;\n          row.classList.toggle(\"hidden\", !visible);\n          if (visible) anyVisible = true;\n        });\n\n        document\n          .getElementById(\"message\")\n          .classList.toggle(\"hidden\", anyVisible);\n        document\n          .getElementById(\"dynamicTable\")\n          .classList.toggle(\"hidden\", !anyVisible);\n      }\n\n      \u002F\u002F Call applyFilters once to initialize the table state based on default filters\n      document.addEventListener(\"DOMContentLoaded\", () =\u003E {\n        applyFilters();\n      });\n    \u003C\u002Fscript\u003E\n  \u003C\u002Fbody\u003E\n\u003C\u002Fhtml\u003E\n",
+                    "id": "be556d4c-f939-44c5-a7a9-3433a75ad052",
+                    "is_binary": false,
+                    "title": "index.html",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-06-20T13:13:39",
+                    "upload_id": null,
+                    "shortid": "yhIU0CHYq12",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": null
+                }, {
+                    "code": "{\n  \"name\": \"html-css\",\n  \"version\": \"1.0.0\",\n  \"description\": \"A template for HTML and CSS\",\n  \"main\": \"index.html\",\n  \"scripts\": {\n    \"start\": \"serve\"\n  },\n  \"keywords\": [\n    \"html\",\n    \"css\"\n  ],\n  \"author\": \"Ives van Hoorne\",\n  \"license\": \"MIT\",\n  \"devDependencies\": {\n    \"serve\": \"11.2.0\"\n  }\n}\n",
+                    "id": "d4d00aa1-30aa-4ecc-825f-bc69400de641",
+                    "is_binary": false,
+                    "title": "package.json",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "upload_id": null,
+                    "shortid": "WAFg1Tc9EaU",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": null
+                }, {
+                    "code": "h1 {\n  text-decoration: underline;\n}\n",
+                    "id": "dcba9466-8055-4ff7-aac6-6f9136015737",
+                    "is_binary": false,
+                    "title": "styles.css",
+                    "sha": null,
+                    "inserted_at": "2024-06-20T13:13:39",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "upload_id": null,
+                    "shortid": "8ShmwbI6w1l",
+                    "source_id": "30b40480-305b-472f-aa41-a4d042916c47",
+                    "directory_shortid": null
+                }],
+                "restricted": false,
+                "forked_template_sandbox": {
+                    "alias": "magical-scott-rjk9n4zj7m",
+                    "id": "rjk9n4zj7m",
+                    "title": "HTML + CSS",
+                    "template": "static",
+                    "inserted_at": "2018-10-31T15:16:47",
+                    "updated_at": "2024-02-01T09:06:43",
+                    "git": {
+                        "path": "",
+                        "branch": "master",
+                        "repo": "static-template",
+                        "username": "codesandbox-app",
+                        "commit_sha": "1d81ddb8e9033a7e70fcad13cfd721e43b86d6a3"
+                    },
+                    "privacy": 0,
+                    "custom_template": {
+                        "id": "2bbad915-3fc4-46f9-b850-c1f0a7717903",
+                        "title": "HTML + CSS",
+                        "v2": false,
+                        "color": "#3AA855",
+                        "url": null,
+                        "published": false,
+                        "icon_url": "github",
+                        "official": false
+                    }
+                },
+                "forked_from_sandbox": null,
+                "authorization": "read",
+                "room_id": null,
+                "like_count": 0,
+                "owned": false,
+                "title": null,
+                "permissions": {
+                    "prevent_sandbox_export": false,
+                    "prevent_sandbox_leaving": false
+                },
+                "picks": []
+            };
+        </script>
+        <style>
+            body,html {
+                overscroll-behavior-x: none
+            }
+        </style>
+        <link href="https://codesandbox.io/static/css/common.75cfbf22.chunk.css" rel="stylesheet">
+        <link href="https://codesandbox.io/static/css/default~app~embed.163db316.chunk.css" rel="stylesheet">
+        <meta property="og:title" name="og:title" content="weathered-butterfly-2fxt7x - CodeSandbox">
+        <meta property="twitter:title" name="twitter:title" content="weathered-butterfly-2fxt7x - CodeSandbox">
+        <meta property="description" name="description" content="weathered-butterfly-2fxt7x by parody1">
+        <meta property="og:description" name="og:description" content="weathered-butterfly-2fxt7x by parody1">
+        <meta property="twitter:description" name="twitter:description" content="weathered-butterfly-2fxt7x by parody1">
+        <meta property="og:author" name="og:author" content="parody1">
+        <meta property="article:author" name="article:author" content="parody1">
+        <meta property="article:published_time" name="article:published_time" content="2024-06-20T13:13:39">
+        <meta property="article:modified_time" name="article:modified_time" content="2024-06-20T13:13:39">
+        <meta property="article:section" name="article:section" content="static">
+        <meta property="og:type" name="og:type" content="article">
+        <meta property="og:url" name="og:url" content="https://codesandbox.io/s/2fxt7x">
+        <meta property="twitter:site" name="twitter:site" content="@codesandbox">
+        <script type="application/ld+json">
+            {
+                "name": "weathered-butterfly-2fxt7x",
+                "text": null,
+                "keywords": "static",
+                "author": {
+                    "name": "parody1",
+                    "image": "https://avatars.githubusercontent.com/u/5676533?v=4",
+                    "url": "https://codesandbox.io/u/parody1",
+                    "@type": "Person"
+                },
+                "image": {
+                    "url": "https://codesandbox.io/api/v1/sandboxes/2fxt7x/screenshot.png",
+                    "@type": "ImageObject"
+                },
+                "url": "https://codesandbox.io/s/2fxt7x",
+                "publisher": {
+                    "name": "CodeSandbox",
+                    "logo": {
+                        "width": 1200,
+                        "url": "https://codesandbox.io/static/img/banner.png",
+                        "height": 630,
+                        "@type": "ImageObject"
+                    },
+                    "@type": "Organization"
+                },
+                "codeRepository": "https://codesandbox.io/s/2fxt7x",
+                "codeSampleType": "full solution",
+                "dateCreated": "2024-06-20T13:13:39",
+                "dateModified": "2024-06-20T13:13:39",
+                "isBasedOn": null,
+                "programmingLanguage": "static",
+                "thumbnailUrl": "https://codesandbox.io/api/v1/sandboxes/2fxt7x/screenshot.png",
+                "workExample": {
+                    "url": "https://2fxt7x.csb.app",
+                    "applicationCategory": "static",
+                    "operatingSystem": "Web app",
+                    "screenshot": "https://codesandbox.io/api/v1/sandboxes/2fxt7x/screenshot.png",
+                    "@type": "SoftwareApplication"
+                },
+                "@context": "https://schema.org",
+                "@type": "SoftwareSourceCode"
+            }</script>
+        <meta property="robots" name="robots" content="noindex">
+        <meta property="og:image" name="og:image" content="https://codesandbox.io/api/v1/sandboxes/2fxt7x/screenshot.png">
+        <meta property="twitter:image:src" name="twitter:image:src" content="https://codesandbox.io/api/v1/sandboxes/2fxt7x/screenshot.png">
+        <meta property="og:image:alt" name="og:image:alt" content="A preview of weathered-butterfly-2fxt7x">
+        <meta property="og:image:width" name="og:image:width" content="1200">
+        <meta property="twitter:image:width" name="twitter:image:width" content="1200">
+        <meta property="og:image:height" name="og:image:height" content="630">
+        <meta property="twitter:image:height" name="twitter:image:height" content="630">
+        <meta property="twitter:card" name="twitter:card" content="summary_large_image">
+    </head>
+    <body style="margin:0;padding:0;background-color:#191d1f;overflow:hidden">
+        <div id="root"></div>
+        <script src="https://codesandbox.io/static/js/common-sandbox.09f563264.chunk.js" crossorigin="anonymous"></script>
+        <script src="https://codesandbox.io/static/js/0.f62fbfd4b.chunk.js"></script>
+        <script src="https://codesandbox.io/static/js/vendors~app~embed~sandbox-startup.1c90fe343.chunk.js" crossorigin="anonymous"></script>
+        <script src="https://codesandbox.io/static/js/common.67289e494.chunk.js"></script>
+        <script src="https://codesandbox.io/static/js/vendors~embed.f59a39d58.chunk.js"></script>
+        <script src="https://codesandbox.io/static/js/default~app~embed~sandbox~sandbox-startup.e509d996f.chunk.js" crossorigin="anonymous"></script>
+        <script src="https://codesandbox.io/static/js/default~app~embed~sandbox.64e39ff77.chunk.js" crossorigin="anonymous"></script>
+        <script src="https://codesandbox.io/static/js/default~app~embed.006b7dd9d.chunk.js"></script>
+        <script src="https://codesandbox.io/static/js/embed.5d2ffcc6c.js"></script>
+        <script>
+            (function() {
+                function c() {
+                    var b = a.contentDocument || a.contentWindow.document;
+                    if (b) {
+                        var d = b.createElement('script');
+                        d.innerHTML = "window.__CF$cv$params={r:'896e798ddbf894a6',t:'MTcxODkxNDk4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                        b.getElementsByTagName('head')[0].appendChild(d)
+                    }
+                }
+                if (document.body) {
+                    var a = document.createElement('iframe');
+                    a.height = 1;
+                    a.width = 1;
+                    a.style.position = 'absolute';
+                    a.style.top = 0;
+                    a.style.left = 0;
+                    a.style.border = 'none';
+                    a.style.visibility = 'hidden';
+                    document.body.appendChild(a);
+                    if ('loading' !== document.readyState)
+                        c();
+                    else if (window.addEventListener)
+                        document.addEventListener('DOMContentLoaded', c);
+                    else {
+                        var e = document.onreadystatechange || function() {}
+                        ;
+                        document.onreadystatechange = function(b) {
+                            e(b);
+                            'loading' !== document.readyState && (document.onreadystatechange = e,
+                            c())
+                        }
+                    }
+                }
+            }
+            )();
+        </script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"896e798ddbf894a6","version":"2024.4.1","token":"7449176f14aa420c959831edd48bd5b7"}' crossorigin="anonymous"></script>
+    </body>
+</html>

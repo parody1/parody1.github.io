@@ -5,7 +5,7 @@
   for = "/*"
   [headers.values]
     X-Frame-Options = "ALLOWALL" 
-    Content-Security-Policy = "frame-ancestors *" 
+    Content-Security-Policy = "frame-ancestors 'self' *" 
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"

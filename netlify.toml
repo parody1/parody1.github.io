@@ -1,7 +1,3 @@
-[build]
-  publish = "public" # Ensure this matches the directory where your site files are located
-  command = "npm run build" # If you have a build command, otherwise remove this line
-
 [[headers]]
   for = "/*"
   [headers.values]

@@ -3,51 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="iframely oembed reader allow ssl html5" href="https://parody1.github.io/" type="text/html" media="(aspect-ratio: 16/9)" html="" />
+
     <title>Dynamic Table with Filters</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
+        @font-face {
+            font-family: "Avenir Next W04 Demi";
+            src: url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.eot");
+            src: url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.eot?#iefix")format("embedded-opentype"),
+            url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.woff2")format("woff2"),
+            url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.woff")format("woff"),
+            url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.ttf")format("truetype"),
+            url("https://db.onlinewebfonts.com/t/0389bdf50d5b601e5ab18443145f4e6d.svg#Avenir Next W04 Demi")format("svg");
         }
-        .container {
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Avenir Next LT Pro Demi', Arial, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+        }
+        .header-image {
+            margin: 20px 0;
+            display: block;
         }
         table {
             width: 100%;
             max-width: 100%;
-            border-collapse: collapse;
-            border: 1px solid #ddd;
+            table-layout: fixed;
+            border-collapse: separate; /* Use separate borders for rounded corners */
+            border-spacing: 0; /* Remove spacing between cells */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            overflow: hidden; /* Ensure content fits within the rounded corners */
+            border: 1px solid #ddd; /* Optional: Add border to visualize rounded corners */
         }
         th, td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
+            word-wrap: break-word;
+            background-clip: padding-box; /* Ensures background respects border radius */
         }
         th {
-            background-color: #f4f4f4;
+            background-color: black;
         }
-        @media (max-width: 600px) {
-            table {
-                width: 100%;
-                display: block;
-                overflow-x: auto;
-            }
-            th, td {
-                white-space: nowrap;
-            }
+        th img {
+            max-width: 100px; /* Set the desired maximum width */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .filters {
+            display: flex;
+            flex-direction: row; /* Change to row to place filters on the same line */
+            align-items: center;
+            justify-content: center; /* Center the filters horizontally */
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Allow wrapping if the filters do not fit in one line */
+        }
+        .filters button {
+            margin: 5px;
+            padding: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filters button.selected {
+            background-color: #007bff;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .dropbtn {
+            background-color: #555;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .dropdown-content label {
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content label:hover {
+            background-color: blue;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .message {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Dynamic Table with Filters</h1>
-        <!-- Your table and other content here -->
+
+<img src="https://www.ledimesh.com/-_-/res/427c60b4-1b47-485d-bc6f-af01dc7e5c1b/images/files/427c60b4-1b47-485d-bc6f-af01dc7e5c1b/99457a21-e090-42b7-8836-016d61a412ed/320-237/b54f56f063725b3f03614188c9dd7ea7f6091da1" alt="Header Image" class="header-image">
+
+<div class="filters">
+    <div class="dropdown">
+        <button class="dropbtn">Filter 1</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="Criteria1" onchange="applyFilters()"> Criteria 1</label>
+            <label><input type="checkbox" value="Criteria2" onchange="applyFilters()"> Criteria 2</label>
+            <label><input type="checkbox" value="Criteria3" onchange="applyFilters()"> Criteria 3</label>
+        </div>
     </div>
+    <div class="dropdown">
+        <button class="dropbtn">Filter 2</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="Criteria1" onchange="applyFilters()"> Criteria 1</label>
+            <label><input type="checkbox" value="Criteria2" onchange="applyFilters()"> Criteria 2</label>
+            <label><input type="checkbox" value="Criteria3" onchange="applyFilters()"> Criteria 3</label>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Filter 3</button>
+        <div class="dropdown-content">
+            <label><input type="checkbox" value="Criteria1" onchange="applyFilters()"> Criteria 1</label>
+            <label><input type="checkbox" value="Criteria2" onchange="applyFilters()"> Criteria 2</label>
+            <label><input type="checkbox" value="Criteria3" onchange="applyFilters()"> Criteria 3</label>
+        </div>
+    </div>
+</div>
+
+<div id="message" class="message">Choose your criteria</div>
+
+<table id="dynamicTable">
+    <thead>
+        <tr>
+            <th class="col1"><img src="https://lumoscontrols.com/index_files/menu-logo.svg" alt="Image 1"><br>Lumos Controls</th>
+            <th class="col2"><img src="https://cosmicnode.com/wp-content/uploads/2022/04/cn-logo.svg" alt="Image 2"><br>Cosmicnode</th>
+            <th class="col3"><img src="https://ingy.nl/wp-content/uploads/2018/11/INGY.png" alt="Image 3"><br>Ingy</th>
+            <th class="col4"><img src="https://www.one-lux.com/wp-content/themes/one-lux/library/images/logo.png" alt="Image 4"><br>One Lux</th>
+            <th class="col5"><img src="https://www.systeqltd.co.uk/web/image/2088-d8f11cfc/H2A_2.svg" alt="Image 5"><br>Systeq</th>
+            <th class="col6"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/SILVAIR_logotype.png/120px-SILVAIR_logotype.png" alt="Image 6"><br>Silvair</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-filter1="Criteria1" data-filter2="Criteria1" data-filter3="Criteria1">
+            <td class="col1">Row 1, Col 1</td>
+            <td class="col2">Row 1, Col 2</td>
+            <td class="col3">Row 1, Col 3</td>
+            <td class="col4">Row 1, Col 4</td>
+            <td class="col5">Row 1, Col 5</td>
+            <td class="col6">Row 1, Col 6</td>
+        </tr>
+        <tr data-filter1="Criteria2" data-filter2="Criteria2" data-filter3="Criteria2">
+            <td class="col1">Row 2, Col 1</td>
+            <td class="col2">Row 2, Col 2</td>
+            <td class="col3">Row 2, Col 3</td>
+            <td class="col4">Row 2, Col 4</td>
+            <td class="col5">Row 2, Col 5</td>
+            <td class="col6">Row 2, Col 6</td>
+        </tr>
+        <tr data-filter1="Criteria3" data-filter2="Criteria3" data-filter3="Criteria3">
+            <td class="col1">Row 3, Col 1</td>
+            <td class="col2">Row 3, Col 2</td>
+            <td class="col3">Row 3, Col 3</td>
+            <td class="col4">Row 3, Col 4</td>
+            <td class="col5">Row 3, Col 5</td>
+            <td class="col6">Row 3, Col 6</td>
+        </tr>
+        <!-- Repeat similar rows for a total of 18 rows, each assigned to one of the categories -->
+        <!-- Example for more rows -->
+        <tr data-filter1="Criteria1" data-filter2="Criteria2" data-filter3="Criteria3">
+            <td class="col1">Row 4, Col 1</td>
+            <td class="col2">Row 4, Col 2</td>
+            <td class="col3">Row 4, Col 3</td>
+            <td class="col4">Row 4, Col 4</td>
+            <td class="col5">Row 4, Col 5</td>
+            <td class="col6">Row 4, Col 6</td>
+        </tr>
+        <tr data-filter1="Criteria2" data-filter2="Criteria3" data-filter3="Criteria1">
+            <td class="col1">Row 5, Col 1</td>
+            <td class="col2">Row 5, Col 2</td>
+            <td class="col3">Row 5, Col 3</td>
+            <td class="col4">Row 5, Col 4</td>
+            <td class="col5">Row 5, Col 5</td>
+            <td class="col6">Row 5, Col 6</td>
+        </tr>
+        <tr data-filter1="Criteria3" data-filter2="Criteria1" data-filter3="Criteria2">
+            <td class="col1">Row 6, Col 1</td>
+            <td class="col2">Row 6, Col 2</td>
+            <td class="col3">Row 6, Col 3</td>
+            <td class="col4">Row 6, Col 4</td>
+            <td class="col5">Row 6, Col 5</td>
+            <td class="col6">Row 6, Col 6</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
+<script>
+    const selectedFilters = {
+        filter1: new Set(),
+        filter2: new Set(),
+        filter3: new Set()
+    };
+
+    function applyFilters() {
+        const rows = document.querySelectorAll('#dynamicTable tbody tr');
+        let anyVisible = false;
+
+        const selectedfilter1 = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked'))
+            .filter(checkbox => checkbox.closest('.dropdown').querySelector('.dropbtn').textContent.trim() === "Filter 1")
+            .map(checkbox => checkbox.value);
+
+        const selectedfilter2 = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked'))
+            .filter(checkbox => checkbox.closest('.dropdown').querySelector('.dropbtn').textContent.trim() === "Filter 2")
+            .map(checkbox => checkbox.value);
+
+        const selectedfilter3 = Array.from(document.querySelectorAll('.dropdown-content input[type="checkbox"]:checked'))
+            .filter(checkbox => checkbox.closest('.dropdown').querySelector('.dropbtn').textContent.trim() === "Filter 3")
+            .map(checkbox => checkbox.value);
+
+        rows.forEach(row => {
+            const filter1Match = selectedfilter1.length === 0 || selectedfilter1.includes(row.dataset.filter1);
+            const filter2Match = selectedfilter2.length === 0 || selectedfilter2.includes(row.dataset.filter2);
+            const filter3Match = selectedfilter3.length === 0 || selectedfilter3.includes(row.dataset.filter3);
+
+            const visible = filter1Match && filter2Match && filter3Match;
+            row.classList.toggle('hidden', !visible);
+            if (visible) anyVisible = true;
+        });
+
+        document.getElementById('message').classList.toggle('hidden', anyVisible);
+        document.getElementById('dynamicTable').classList.toggle('hidden', !anyVisible);
+    }
+
+    // Call applyFilters once to initialize the table state based on default filters
+    document.addEventListener('DOMContentLoaded', () => {
+        applyFilters();
+    });
+</script>
 </body>
-</html>
